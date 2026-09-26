@@ -36,13 +36,13 @@ return {
     },
     platforms = {
         ["aarch64-linux"] = {
-            default_version = "0.1.0-main+9c8d622de688",
+            default_version = "0.1.0-main+31ba3baa9c5e",
         },
         ["aarch64-macos"] = {
-            default_version = "0.1.0-main+9c8d622de688",
+            default_version = "0.1.0-main+31ba3baa9c5e",
         },
         ["x86_64-linux"] = {
-            default_version = "0.1.0-main+9c8d622de688",
+            default_version = "0.1.0-main+31ba3baa9c5e",
         },
     },
     versions = {
@@ -93,6 +93,33 @@ return {
                     { "rb", "--version" },
                     { "rb", "--help" },
                     { "rootbeer-forge", "--help" },
+                },
+            },
+        },
+        ["0.1.0-main+31ba3baa9c5e"] = {
+            digests = {
+                ["aarch64-linux"] = "2007aeeb3812483e2e33e1937f21bff7c575eee10704b8971ddfc7bc422a0b74",
+                ["aarch64-macos"] = "2007aeeb3812483e2e33e1937f21bff7c575eee10704b8971ddfc7bc422a0b74",
+                ["x86_64-linux"] = "2007aeeb3812483e2e33e1937f21bff7c575eee10704b8971ddfc7bc422a0b74",
+            },
+            source = {
+                url = "https://codeload.github.com/rootbeer-org/rootbeer/tar.gz/31ba3baa9c5e77f0e8bfef11ff353526fc039720",
+                git = {
+                    github = "rootbeer-org/rootbeer",
+                    branch = "main",
+                },
+                archive = "tar.gz",
+                strip_prefix = "rootbeer-31ba3baa9c5e77f0e8bfef11ff353526fc039720",
+            },
+            build = {
+                backend = "rust",
+                rust = {
+                    packages = { "rootbeer-cli", "rootbeer-forge", "rootbeer-store" },
+                    environment = {
+                        RB_SOURCE_REVISION = "31ba3baa9c5e77f0e8bfef11ff353526fc039720",
+                        ROOTBEER_PDR_PUBLIC_KEY = "028c5b185fb63ea61128a0bf6fb0decc8b700020561db08d82a998c7d0493bc0",
+                        ROOTBEER_PDR_URL = "https://pdr.rbpkg.com/v3/current.json",
+                    },
                 },
             },
         },
